@@ -1,0 +1,48 @@
+
+  
+  <div class="content container pt-5 pb-5">
+    <h2 class="pt-5">ICTAK Learner Tracker</h2>
+    <div class=" pt-5">
+        <div class="pt-5 pb-5">
+          <button class="btn btn-primary" routerLink="/add-students">Add Students</button>
+        </div>
+        <table class="table table-hover ">
+            <thead>
+              <tr class="table-dark">
+                <th scope="col">#</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">email id</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Course</th>
+                <th scope="col">Batch</th>
+                <th scope="col">Program</th>
+                <th scope="col">Course Status</th>
+                <th scope="col">Placement Status</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+               
+
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of students  let i= index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{student.student_name}}</td>
+                <td>{{student.contact_number}}</td>
+                <td>{{student.phone}}</td>
+                <td>{{student.email_id}}</td>
+                <td>{{student.batch}}</td>
+                <td>{{student.program}}</td>
+                <td>{{student.course}}</td>
+                <td>Not placed</td>
+                <th scope="col"><button class="btn btn-warning"  routerLink="/edit-students/:id">Edit</button></th>
+                <th scope="col"><button class="btn btn-danger" type="submit" (click)="deletestudent(student._id)" >Delete</button></th>
+              </tr>
+             
+            </tbody>
+          </table>
+    </div>
+  
+  </div>

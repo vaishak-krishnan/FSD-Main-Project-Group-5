@@ -1,0 +1,112 @@
+
+  
+  <div class="content container pt-5 pb-5">
+    <div class=" pt-5">
+        
+        <h3>Add New Student</h3>
+<form #addform="ngForm" (ngSubmit)="onSubmit()">
+
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group pt-3">
+                <input type="text" class="form-control"  name="student_name" required placeholder="Name" [(ngModel)]="data.student_name">
+        
+            </div>
+            <div class="form-group pt-3">
+                <input type="" class="form-control"  name="contact_number"  required placeholder="Contact Number" [(ngModel)]="data.contact_number" >
+        
+            </div>
+            <div class="form-group pt-3">
+                <input type="text" class="form-control" name="email_id"   required placeholder="email id" [(ngModel)]="data.email_id" >
+        
+            </div>
+            <div class="form-group pt-3">
+
+                <select class="form-select" aria-label="Default select example" name="course" [(ngModel)]="data.course">
+                    <option selected>Select Course</option>
+                    <option value="DSA">DSA</option>
+                    <option value="ML-AI">ML-AI</option>
+                    <option value="RPA">RPA</option>
+                    <option value="ST">ST</option>
+                    <option value="CSA">CSA</option>
+                  </select>
+               
+
+                 
+            </div>
+            <div class="form-group pt-3">
+                <select class="form-select" aria-label="Default select example" name="batch" [(ngModel)]="data.batch">
+                    <option selected>Select Batch</option>
+                    <option value="May 22">May 22</option>
+                    <option value="June 22">June 22</option>
+                    <option value="July 22">July 22</option>
+                    <option value="Augest 22">Augest 22</option>
+                  </select>
+            </div>
+            <div class="form-group pt-3">
+                <select class="form-select" aria-label="Default select example" name="program" [(ngModel)]="data.program">
+                    <option selected>Select Program</option>
+                    <option value="ICTAK">ICTAK</option>
+                    <option value="KKEM">KKEM</option>
+                    <option value="NORKA">NORKA</option>
+                    <option value="ABCD">ABCD</option>
+                    <option value="KDISC">KDISC</option>
+                  </select>
+              
+            </div>
+            <div class="form-group pt-3">
+                <select class="form-select" aria-label="Default select example" name="training_head" [(ngModel)]="data.training_head">
+                    <option selected>Select Training Head</option>
+                    <option value="Training Head 1">Training Head 1</option>
+                  </select>
+            </div>
+            <div class="form-group pt-3">
+                <select class="form-select" aria-label="Default select example" name="placement_officer" [(ngModel)]="data.placement_officer">
+                    <option selected>Select Placement head</option>
+                    <option value="Placement Head 1">Placement Head 1</option>
+                  </select>
+                
+            </div>
+            <div class="form-group pt-3">
+                <select class="form-select" aria-label="Default select example" name="employment_status" [(ngModel)]="data.employment_status">
+                    <option selected>Select Placement Status </option>
+                    <option value="PlacedJobSeeking">PlacedJobSeeking</option>
+                    <option value="JobSeeking">JobSeeking</option>
+                    <option value="NOT Interested">NOT Interested</option>
+                  </select>
+
+            </div>
+            <div class="form-group pt-3">
+
+                <select class="form-select" aria-label="Default select example" name="course_status" [(ngModel)]="data.course_status">
+                    <option selected>Select Course Completion Status </option>
+                    <option value="Qualified">Qualified</option>
+                    <option value="Incompetent">Incompetent</option>
+                  </select>
+            </div>
+
+        </div>
+        <div class="col-6">
+
+           
+            <div class="form-group">
+                <textarea name="contact_address" class="form-control" id="" cols="30" rows="22" required placeholder="Address" [(ngModel)]="data.contact_address"></textarea>
+            </div>
+
+        </div>
+      </div>
+
+
+    <div class="add pt-5" style="text-align:center">
+        <button type="submit"  class="btn btn-success">Add Student</button>
+        <button type="reset" class="btn btn-warning m-2 ">Clear</button>
+    </div>
+
+</form>
+    </div>
+  
+  </div>
+
+
+
