@@ -5,6 +5,7 @@ const courseDATA = require("../models/courses");
 const programDATA = require("../models/programs");
 const batchDATA = require("../models/batch");
 const officerData = require('../models/officer') 
+const userData = require('../models/users') 
 // const { findById } = require('../model/officer')
 
 
@@ -85,9 +86,6 @@ router.delete('/deletestudent/:id', async (req, res) => {
     } catch (error) {
         console.log(`error from get method ${error}`);
     }
-
-    
-
 });
 
 // update data
@@ -263,6 +261,7 @@ router.get('/batchlist', async (req, res) => {
     }
 
 });
+
 
 // fetch single batch data (get)
 router.get('/getsinglebatch/:id', async (req, res) => {
