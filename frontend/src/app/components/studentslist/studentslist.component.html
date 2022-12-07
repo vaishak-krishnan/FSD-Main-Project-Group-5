@@ -2,12 +2,12 @@
    
    <div class="sidebar ">
       <a class="active" routerLink="/home">Home</a>
-      <a routerLink="/add-students">Trainers</a>
-      <a href="#contact">Placement Officers</a>
+      <a routerLink="">Trainers</a>
+      <a routerLink="">Placement Officers</a>
     </div>
-  <div class="content container-fluid pt-5 pb-5">
+  <div class="content   pt-5 pb-5">
     <h2 class="pt-5">ICTAK Learner Tracker</h2>
-    <div class=" pt-5">
+    <div class="  ">
         <div class="pt-5 pb-5">
           <button class="btn btn-primary" routerLink="/add-students">Add Students</button>
         </div>
@@ -23,6 +23,8 @@
                 <th scope="col">Program</th>
                 <th scope="col">Course Status</th>
                 <th scope="col">Placement Status</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -35,7 +37,7 @@
                 <td>{{student.batch}}</td>
                 <td>{{student.program}}</td>
                 <td>{{student.course}}</td>
-                <td>Not placed</td>
+                <td>{{student.employment_status}}</td>
                 <th scope="col"><button class="btn btn-warning"  routerLink="/edit-students/:id">Edit</button></th>
                 <th scope="col"><button class="btn btn-danger" type="submit" (click)="deletestudent(student._id)" >Delete</button></th>
               </tr>
@@ -43,5 +45,8 @@
             </tbody>
           </table>
     </div>
+
+    
   
   </div>
+

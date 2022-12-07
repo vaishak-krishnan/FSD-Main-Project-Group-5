@@ -40,7 +40,7 @@ export class AddstudentsComponent implements OnInit {
     this.apiService.addstudent(this.data).subscribe(res=>{
       this.students=res
       alert('successfully added');
-      this.router.navigate(['/home'])
+      this.router.navigate(['/studentslist'])
     })
   }  
 }
