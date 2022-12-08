@@ -10,20 +10,20 @@
     <div class="row">
         <div class="col-6">
             <div class="form-group pt-3">
-                <input type="text" class="form-control"  name="student_name" required placeholder="Name" [(ngModel)]="data.student_name">
+                <input type="text" class="form-control"  name="student_name" required placeholder="Name" [(ngModel)]="studentsdata.student_name">
         
             </div>
             <div class="form-group pt-3">
-                <input type="" class="form-control"  name="contact_number"  required placeholder="Contact Number" [(ngModel)]="data.contact_number" >
+                <input type="" class="form-control"  name="contact_number"  required placeholder="Contact Number" [(ngModel)]="studentsdata.contact_number" >
         
             </div>
             <div class="form-group pt-3">
-                <input type="text" class="form-control" name="email_id"   required placeholder="email id" [(ngModel)]="data.email_id" >
+                <input type="text" class="form-control" name="email_id"   required placeholder="email id" [(ngModel)]="studentsdata.email_id" >
         
             </div>
             <div class="form-group pt-3">
 
-                <select class="form-select" aria-label="Default select example" name="course" [(ngModel)]="data.course">
+                <select class="form-select" aria-label="Default select example" name="course" [(ngModel)]="studentsdata.course">
                     <option selected>Select Course</option>
                     <option value="DSA">DSA</option>
                     <option value="ML-AI">ML-AI</option>
@@ -36,7 +36,7 @@
                  
             </div>
             <div class="form-group pt-3">
-                <select class="form-select" aria-label="Default select example" name="batch" [(ngModel)]="data.batch">
+                <select class="form-select" aria-label="Default select example" name="batch" [(ngModel)]="studentsdata.batch">
                     <option selected>Select Batch</option>
                     <option value="May 22">May 22</option>
                     <option value="June 22">June 22</option>
@@ -45,7 +45,7 @@
                   </select>
             </div>
             <div class="form-group pt-3">
-                <select class="form-select" aria-label="Default select example" name="program" [(ngModel)]="data.program">
+                <select class="form-select" aria-label="Default select example" name="program" [(ngModel)]="studentsdata.program">
                     <option selected>Select Program</option>
                     <option value="ICTAK">ICTAK</option>
                     <option value="KKEM">KKEM</option>
@@ -56,20 +56,20 @@
               
             </div>
             <div class="form-group pt-3">
-                <select class="form-select" aria-label="Default select example" name="training_head" [(ngModel)]="data.training_head">
+                <select class="form-select" aria-label="Default select example" name="training_head" [(ngModel)]="studentsdata.training_head">
                     <option selected>Select Training Head</option>
                     <option value="Training Head 1">Training Head 1</option>
                   </select>
             </div>
             <div class="form-group pt-3">
-                <select class="form-select" aria-label="Default select example" name="placement_officer" [(ngModel)]="data.placement_officer">
+                <select class="form-select" aria-label="Default select example" name="placement_officer" [(ngModel)]="studentsdata.placement_officer">
                     <option selected>Select Placement head</option>
                     <option value="Placement Head 1">Placement Head 1</option>
                   </select>
                 
             </div>
             <div class="form-group pt-3">
-                <select class="form-select" aria-label="Default select example" name="employment_status" [(ngModel)]="data.employment_status">
+                <select class="form-select" aria-label="Default select example" name="employment_status" [(ngModel)]="studentsdata.employment_status">
                     <option selected>Select Placement Status </option>
                     <option value="PlacedJobSeeking">PlacedJobSeeking</option>
                     <option value="JobSeeking">JobSeeking</option>
@@ -79,7 +79,7 @@
             </div>
             <div class="form-group pt-3">
 
-                <select class="form-select" aria-label="Default select example" name="course_status" [(ngModel)]="data.course_status">
+                <select class="form-select" aria-label="Default select example" name="course_status" [(ngModel)]="studentsdata.course_status">
                     <option selected>Select Course Completion Status </option>
                     <option value="Qualified">Qualified</option>
                     <option value="Incompetent">Incompetent</option>
@@ -91,7 +91,7 @@
 
            
             <div class="form-group">
-                <textarea name="contact_address" class="form-control" id="" cols="30" rows="22" required placeholder="Address" [(ngModel)]="data.contact_address"></textarea>
+                <textarea name="contact_address" class="form-control" id="" cols="30" rows="22" required placeholder="Address" [(ngModel)]="studentsdata.contact_address"></textarea>
             </div>
 
         </div>

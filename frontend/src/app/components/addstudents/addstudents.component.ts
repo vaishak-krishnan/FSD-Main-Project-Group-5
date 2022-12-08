@@ -17,7 +17,7 @@ export class AddstudentsComponent implements OnInit {
     private router:Router,
     private route:ActivatedRoute
     ) { }
-    data={
+    studentsdata={
       student_name:'',
       contact_number:'',
       email_id:'',
@@ -37,7 +37,7 @@ export class AddstudentsComponent implements OnInit {
   }
 
   onSubmit(){
-    this.apiService.addstudent(this.data).subscribe(res=>{
+    this.apiService.addstudent(this.studentsdata).subscribe(res=>{
       this.students=res
       alert('successfully added');
       this.router.navigate(['/studentslist'])

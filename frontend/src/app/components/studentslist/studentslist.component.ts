@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
+import { Router } from '@angular/router';
+
 
 
 
@@ -13,7 +15,7 @@ export class StudentslistComponent implements OnInit {
   students : any = []
   id:any
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService,  private router: Router) { }
 
   ngOnInit(): void {
     this.getstudentData();
@@ -25,6 +27,12 @@ export class StudentslistComponent implements OnInit {
     this.apiService.getstudentsList().subscribe(res => {
       this.students = res
     })
+  }
+
+  updatestudent(_id: any) {
+    console.log(_id)
+    this.apiService.formupdate = _id;
+    this.router.navigate(['/edit-students']);
   }
 
   deletestudent(id:any){

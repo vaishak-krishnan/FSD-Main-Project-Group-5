@@ -16,6 +16,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { BatchesComponent } from './components/batches/batches.component';
+import { ProgramsComponent } from './components/programs/programs.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { LoginComponent } from './components/login/login.component';
     EditstudentsComponent,
     NavbarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    CoursesComponent,
+    BatchesComponent,
+    ProgramsComponent
   ],
   imports: [
     BrowserModule,
