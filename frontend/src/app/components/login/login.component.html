@@ -1,0 +1,60 @@
+<<<<<<< HEAD
+<div class="body">
+
+    <div class="login text-center">
+        <main class="form-signin w-100 m-auto">
+            <form>
+              <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+              <H1>Learner Tracker</H1>
+              <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+          
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+              </div>
+          
+              <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="remember-me"> Remember me
+                </label>
+              </div>
+              <button class="w-100 btn btn-lg btn-primary" type="submit" routerLink="/studentslist">Sign in</button>
+              <p class="mt-5 mb-3 text-muted">&copy; 2022 Group 5 FSD July</p>
+            </form>
+          </main>
+          
+    </div>
+
+</div>
+
+=======
+
+<div class="vh-100 d-flex pb-5 justify-content-center align-items-center " >
+<div class="col-md-5 p-3 shadow-sm  rounded-2 mt-5   bg-white">
+  <img style="height:60px ;padding-top:15px;display: block;margin-left: auto;margin-right: auto;" src="../../assets/ictlogo.png" alt="logo">
+  <h2 class="text-center"> ICTAK Learner Tracker</h2>
+  <h4 class="text-center">LOGIN</h4>
+  <form  (ngSubmit)="loginUser()" method="POST">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" 
+       [(ngModel)]="user.email" name="email"  required></div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1"
+      [(ngModel)]="user.password" name="password"  required minlength="6">
+      
+    </div>
+    <p class="small"><a style="text-decoration: none;" class="text-primary" href="">Forgot password?</a></p>
+    <div class="d-grid">
+      <button  class="btn " type="submit"><span>Login </span></button>
+    </div>
+  </form>
+  
+</div>
+</div>
+>>>>>>> 58fd3f7 (pushing from anusha)

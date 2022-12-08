@@ -1,0 +1,57 @@
+
+   
+   <div class="sidebar ">
+      <a class="active" routerLink="/home">Home</a>
+      <a routerLink="">Trainers</a>
+      <a routerLink="">Placement Officers</a>
+    </div>
+  <div class="content   pt-5 pb-5">
+    <h2 class="pt-5">ICTAK Learner Tracker</h2>
+    <div class="  ">
+        <div class="pt-5 pb-5">
+          <button class="btn btn-primary" routerLink="/add-students">Add Students</button>
+        </div>
+        <table class="table table-hover ">
+            <thead>
+              <tr class="table-dark">
+                <th scope="col">#</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">email id</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Course</th>
+                <th scope="col">Batch</th>
+                <th scope="col">Program</th>
+                <th scope="col">Course Status</th>
+                <th scope="col">Placement Status</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of students  let i= index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{student.student_name}}</td>
+                <td>{{student.contact_number}}</td>
+                <td>{{student.phone}}</td>
+                <td>{{student.email_id}}</td>
+                <td>{{student.batch}}</td>
+                <td>{{student.program}}</td>
+                <td>{{student.course}}</td>
+                <td>{{student.employment_status}}</td>
+<<<<<<< HEAD
+                <th scope="col"><button class="btn btn-warning" type="button" (click)="updatestudent(student._id)">Edit</button></th>
+                <th scope="col"><button class="btn btn-danger" type="button" (click)="deletestudent(student._id)" >Delete</button></th>
+=======
+                <th scope="col"><button class="btn btn-warning"  routerLink="/edit-students/:id">Edit</button></th>
+                <th scope="col"><button class="btn btn-danger" type="submit" (click)="deletestudent(student._id)" >Delete</button></th>
+>>>>>>> 58fd3f7 (pushing from anusha)
+              </tr>
+             
+            </tbody>
+          </table>
+    </div>
+
+    
+  
+  </div>
+
