@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http'
 })
 export class ApiService {
 
-  apiUrl:String = 'http://localhost:3000/api'
+  apiUrl:String = 'http://localhost:3000'
   // apiUrl:String ='api'
 
   constructor(private http :HttpClient) { }
@@ -16,30 +16,30 @@ export class ApiService {
 
     //to fetch all students data list
 getstudentsList(){
-  return this.http.get(`${this.apiUrl}/studentslist`)
+  return this.http.get(`${this.apiUrl}/adminapi/studentslist`)
 }
 
 // Get Studentby id 
 
 getStudentById(_id:any){
-  return this.http.get(`${this.apiUrl}/getsinglestudent/${_id}`)
+  return this.http.get(`${this.apiUrl}/adminapi/getsinglestudent/${_id}`)
 }
 
 // to add new Student  
 
 addstudent(data:any){
-  return this.http.post(`${this.apiUrl}/add_student`, data)
+  return this.http.post(`${this.apiUrl}/adminapi/add_student`, data)
 
 }
 // update student
 updateStudent(data: any, _id: any){
-  return this.http.put('http://localhost:3000/api/updateStudent', { data, _id });
+  return this.http.put(`${this.apiUrl}/adminapi/updateStudent`, { data, _id });
 
 }
 
 // to delete student
 deletestudent(id:any){
-  return this.http.delete(`${this.apiUrl}/deletestudent/${id}`)
+  return this.http.delete(`${this.apiUrl}/adminapi/deletestudent/${id}`)
 }
 
 public formupdate: any;
