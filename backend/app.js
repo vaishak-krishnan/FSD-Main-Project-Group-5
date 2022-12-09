@@ -19,8 +19,8 @@ require("./middleware/mongodb.js");
 
 
 // for api calls
-const api = require("./router/api.js");
-app.use("/api", api);
+const adminapi = require("./router/adminapi.js");
+app.use("/adminapi", adminapi);
 
 
 
