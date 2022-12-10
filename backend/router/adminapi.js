@@ -1,12 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const studentDATA = require("../models/students");
+
 const courseDATA = require("../models/courses");
 const programDATA = require("../models/programs");
 const batchDATA = require("../models/batch");
-const officerData = require('../models/officer') 
-const userData = require('../models/users') 
-// const { findById } = require('../model/officer')
+
 
 
 
@@ -125,6 +124,103 @@ router.put('/updateStudent', async (req, res) => {
 
 
 
+// ---------------------------ADMIN Settings---------------------------//
+
+// -----------------------------------------------------------Start batch
+//add data (post)
+router.post('/add_batch', async (req, res) => {
+
+    try {
+        let item = {
+
+            batch_name: req.body.batch_name,
+            batch_description: req.body.batch_name
+          
+
+        }
+        const newdata = new batchDATA(item);
+        const savedata = await newdata.save();
+        console.log(`from post method ${savedata}`);
+        res.send(savedata);
+
+    } catch (error) {
+        console.log(`error from get method ${error}`);
+    }
+
+});
+
+//get all batch list (get) for data
+router.get('/batchlist', async (req, res) => {
+
+    try {
+        let batchslist = await batchDATA.find();
+
+        console.log(`from get method ${batchslist}`);
+        res.send(batchslist);
+    }
+    catch (error) {
+        console.log(`error from get method ${error}`);
+
+    }
+
+});
+
+
+// fetch single batch data (get)
+router.get('/getsinglebatch/:id', async (req, res) => {
+
+    try {
+        let id = req.params.id;
+        const singlebatchdata = await batchDATA.findById(id);
+        console.log(`from get with id method ${singlebatchdata}`);
+        res.send(singlebatchdata)
+    } catch (error) {
+        console.log(`error from get method ${error}`);
+    }
+
+});
+
+// delete  batch data
+router.delete('/deletebatch/:id', async (req, res) => {
+
+    try {
+        let id = req.params.id;
+        let deletebatchdata = await batchDATA.findByIdAndDelete(id);
+        console.log(`from delete method ${deletebatchdata}`);
+        res.send(deletebatchdata);
+
+    } catch (error) {
+        console.log(`error from get method ${error}`);
+    }
+
+});
+
+// update batch data
+router.put('/updatebatch', async (req, res) => {
+
+    try {
+        let id = req.body._id;
+        let item = { //remove 'data' from below if we not pass data object from frontend
+           
+            batch_name: req.body.batch_name,
+            batch_description: req.body.batch_name
+        }
+        console.log("incoming data from update", item);
+
+        let updatedata = await batchDATA.findByIdAndUpdate(
+            { "_id": id },
+            { $set: item }
+        );
+        console.log(`from put method old data ${updatedata}`);
+        res.send(updatedata);
+
+    } catch (error) {
+        console.log(`error from get method ${error}`);
+    }
+
+});
+
+// end batch
 
 
 
@@ -222,102 +318,6 @@ router.put('/updatecourse', async (req, res) => {
 });
 
 // end course
-
-// -----------------------------------------------------------Start batch
-//add data (post)
-router.post('/add_batch', async (req, res) => {
-
-    try {
-        let item = {
-
-            batch_name: req.body.batch_name,
-            batch_description: req.body.batch_name
-          
-
-        }
-        const newdata = new batchDATA(item);
-        const savedata = await newdata.save();
-        console.log(`from post method ${savedata}`);
-        res.send(savedata);
-
-    } catch (error) {
-        console.log(`error from get method ${error}`);
-    }
-
-});
-
-//get all batch list (get) for data
-router.get('/batchlist', async (req, res) => {
-
-    try {
-        let batchslist = await batchDATA.find();
-
-        console.log(`from get method ${batchslist}`);
-        res.send(batchslist);
-    }
-    catch (error) {
-        console.log(`error from get method ${error}`);
-
-    }
-
-});
-
-
-// fetch single batch data (get)
-router.get('/getsinglebatch/:id', async (req, res) => {
-
-    try {
-        let id = req.params.id;
-        const singlebatchdata = await batchDATA.findById(id);
-        console.log(`from get with id method ${singlebatchdata}`);
-        res.send(singlebatchdata)
-    } catch (error) {
-        console.log(`error from get method ${error}`);
-    }
-
-});
-
-// delete  batch data
-router.delete('/deletebatch/:id', async (req, res) => {
-
-    try {
-        let id = req.params.id;
-        let deletebatchdata = await batchDATA.findByIdAndDelete(id);
-        console.log(`from delete method ${deletebatchdata}`);
-        res.send(deletebatchdata);
-
-    } catch (error) {
-        console.log(`error from get method ${error}`);
-    }
-
-});
-
-// update batch data
-router.put('/updatebatch', async (req, res) => {
-
-    try {
-        let id = req.body._id;
-        let item = { //remove 'data' from below if we not pass data object from frontend
-           
-            batch_name: req.body.batch_name,
-            batch_description: req.body.batch_name
-        }
-        console.log("incoming data from update", item);
-
-        let updatedata = await batchDATA.findByIdAndUpdate(
-            { "_id": id },
-            { $set: item }
-        );
-        console.log(`from put method old data ${updatedata}`);
-        res.send(updatedata);
-
-    } catch (error) {
-        console.log(`error from get method ${error}`);
-    }
-
-});
-
-// end batch
 
 
 // -----------------------------------------------------------Start program
@@ -496,6 +496,10 @@ router.put('/officerlist',async(req,res)=>{
     } 
  
 }) 
+
+
+
+
 
 
 

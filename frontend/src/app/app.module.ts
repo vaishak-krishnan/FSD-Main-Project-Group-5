@@ -16,9 +16,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
-import { CoursesComponent } from './components/courses/courses.component';
-import { BatchesComponent } from './components/batches/batches.component';
-import { ProgramsComponent } from './components/programs/programs.component';
+import { CourseslistComponent } from './components/courseslist/courseslist.component';
+import { ProgramlistComponent } from './components/programlist/programlist.component';
+import { BatclistComponent } from './components/batclist/batclist.component';
+
 
 @NgModule({
   declarations: [
@@ -29,9 +30,10 @@ import { ProgramsComponent } from './components/programs/programs.component';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    CoursesComponent,
-    BatchesComponent,
-    ProgramsComponent
+    CourseslistComponent,
+    ProgramlistComponent,
+    BatclistComponent
+
   ],
   imports: [
     BrowserModule,

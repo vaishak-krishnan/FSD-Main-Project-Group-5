@@ -1,3 +1,6 @@
+import { ProgramlistComponent } from './components/programlist/programlist.component';
+import { BatclistComponent } from './components/batclist/batclist.component';
+import { CourseslistComponent } from './components/courseslist/courseslist.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddstudentsComponent } from './components/addstudents/addstudents.component';
@@ -12,7 +15,13 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'studentslist',component:StudentslistComponent},
   {path:'add-students',component:AddstudentsComponent},
-  {path:'edit-students',component:EditstudentsComponent}
+  {path:'edit-students',component:EditstudentsComponent},
+
+  // path for admin settings
+  {path:'batch-list',component:BatclistComponent},
+  {path:'course-list',component:CourseslistComponent},
+  {path:'program-list',component:ProgramlistComponent},
+
 
 
 ];
