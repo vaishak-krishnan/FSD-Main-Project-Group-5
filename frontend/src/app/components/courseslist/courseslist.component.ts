@@ -45,6 +45,7 @@ getcourseData() {
     console.log(this.courses)
   })
 }
+
 // function for delete course data
 deletecourse(id:any){
   this.apiService.deletecourse(id).subscribe(res=>{

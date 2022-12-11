@@ -71,7 +71,7 @@ deletebatch(id:any){
 
 //end batch
 
-//  course 
+// start course 
 
 // to add course
 addcourse(data:any){
@@ -93,7 +93,7 @@ deletecourse(id:any){
 
 //end course
 
-//  program 
+// start program 
 
 // to add program
 addprogram(data:any){
