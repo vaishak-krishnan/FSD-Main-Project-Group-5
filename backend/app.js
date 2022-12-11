@@ -1,34 +1,34 @@
-const express = require("express");
+const express = require('express');
+const cors = require('cors');
+const morgan = require('morgan');
+const path = require('path');
+
+
+require('./middleware/mongoDB') // initiate mongodb connection
+
 const app = new express();
-const cors = require("cors");//communication
-const logger = require("morgan");//to view api call on terminal
-
-
-
-// to pass data from frontend to backend.  use => while starting the app, use is executed
-app.use(express.json());//json pair
-app.use(express.urlencoded({ extended: true }));//json pair
 app.use(cors());
-app.use(logger("dev"));//morgan
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan('dev'));
+//static folder  
+app.use(express.static(path.resolve(__dirname, './uploads')));
+const PORT = process.env.PORT || 3000;
+
+//all api 
+const userApi = require('./routes/user');
+app.use('/api', userApi);
+const studentApi = require('./routes/student');
+app.use('/api', studentApi);
+const batchApi = require('./routes/batch');
+app.use('/api', batchApi);
+const courseApi = require('./routes/courses');
+app.use('/api', courseApi);
+const programApi = require('./routes/program');
+app.use('/api', programApi);
 
 
-
-// mongodb
-require("./middleware/mongodb.js");
-
-
-
-// for api calls
-const adminapi = require("./router/adminapi.js");
-app.use("/adminapi", adminapi);
-
-
-
-// set port 
-// const port = "api";
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`........port is now connected at ${port} url: http://localhost:3000/........`);
-});
-
-
+//server code
+app.listen(PORT, () => {
+    console.log(`Server is running at ${PORT}`);
+})

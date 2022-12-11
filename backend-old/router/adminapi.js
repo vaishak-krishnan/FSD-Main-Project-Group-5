@@ -134,7 +134,7 @@ router.post('/add_batch', async (req, res) => {
         let item = {
 
             batch_name: req.body.batch_name,
-            batch_description: req.body.batch_name
+            batch_description: req.body.batch_description
           
 
         }
@@ -203,7 +203,7 @@ router.put('/updatebatch', async (req, res) => {
         let item = { //remove 'data' from below if we not pass data object from frontend
            
             batch_name: req.body.batch_name,
-            batch_description: req.body.batch_name
+            batch_description: req.body.batch_description
         }
         console.log("incoming data from update", item);
 
@@ -232,7 +232,7 @@ router.post('/add_course', async (req, res) => {
         let item = {
 
             course_name: req.body.course_name,
-            course_description: req.body.course_name
+            course_description: req.body.course_description
           
 
         }
@@ -300,7 +300,7 @@ router.put('/updatecourse', async (req, res) => {
         let item = { //remove 'data' from below if we not pass data object from frontend
            
             course_name: req.body.course_name,
-            course_description: req.body.course_name
+            course_description: req.body.course_description
         }
         console.log("incoming data from update", item);
 
@@ -328,7 +328,7 @@ router.post('/add_program', async (req, res) => {
         let item = {
 
             program_name: req.body.program_name,
-            program_description: req.body.program_name
+            program_description: req.body.program_description
           
 
         }
@@ -396,7 +396,7 @@ router.put('/updateprogram', async (req, res) => {
         let item = { //remove 'data' from below if we not pass data object from frontend
            
             program_name: req.body.program_name,
-            program_description: req.body.program_name
+            program_description: req.body.program_description
         }
         console.log("incoming data from update", item);
 
