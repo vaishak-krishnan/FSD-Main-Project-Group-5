@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http'
 })
 export class ApiService {
 
-  apiUrl:String = 'http://localhost:3000/api'
+  apiUrl:String = 'http://localhost:3000'
   // apiUrl:String ='api'
 
   constructor(private http :HttpClient) { }
@@ -19,53 +19,32 @@ export class ApiService {
 
 //to fetch all students data list
 getstudentsList(){
-  return this.http.get(`${this.apiUrl}/studentlist`)
+  return this.http.get(`${this.apiUrl}/adminapi/studentslist`)
 }
 
 // Get Studentby id 
 getStudentById(_id:any){
-  return this.http.get(`${this.apiUrl}/student/${_id}`)
+  return this.http.get(`${this.apiUrl}/adminapi/getsinglestudent/${_id}`)
 }
 
 // to add new Student  
 addstudent(data:any){
-  return this.http.post(`${this.apiUrl}/student`, data)
+  return this.http.post(`${this.apiUrl}/adminapi/add_student`, data)
 
 }
 
 // update student
 updateStudent(data: any, _id: any){
-  return this.http.put(`${this.apiUrl}/student`, { data, _id });
+  return this.http.put(`${this.apiUrl}/adminapi/updateStudent`, { data, _id });
 
 }
 
 // to delete student
 deletestudent(id:any){
-  return this.http.delete(`${this.apiUrl}/student/${id}`)
+  return this.http.delete(`${this.apiUrl}/adminapi/deletestudent/${id}`)
 }
 
 //------------------------------------------  Students end points ends here ------------------------------------------------- //
-//-------------------------------------------USER end points strts here----------------------------------//
-getuserList(){   
-  return this.http.get(`${this.apiUrl}/userlist`);  
-}
-
-addnewuser(data:any){
-  return this.http.post(`${this.apiUrl}/user`, data);  
-}
-
-getuserdetails(id:any){
-  return this.http.get(`${this.apiUrl}/user/${id}`);
-}
-
-updateuserdetails(data:any){
-  return this.http.put(`${this.apiUrl}/user`,data);
-}
-
-deleteuserDetails(id:any){
-  return this.http.delete(`${this.apiUrl}/user/${id}`)
-}
-//---------------------------------------user end points ends here--------------------------------------//
 
 //------------------------------------------  settings end points are here ------------------------------------------------- //
 
@@ -73,20 +52,20 @@ deleteuserDetails(id:any){
 
 // to add batch
 addbatch(data:any){
-  return this.http.post(`${this.apiUrl}/add_batch`, data)
+  return this.http.post(`${this.apiUrl}/adminapi/add_batch`, data)
 
 }
 
 
 //to fetch all batch data list
 getbatchList(){
-  return this.http.get(`${this.apiUrl}/batchlist`)
+  return this.http.get(`${this.apiUrl}/adminapi/batchlist`)
 }
 
 
 // to delete batch
 deletebatch(id:any){
-  return this.http.delete(`${this.apiUrl}/deletebatch/${id}`)
+  return this.http.delete(`${this.apiUrl}/adminapi/deletebatch/${id}`)
 }
 
 
@@ -96,19 +75,19 @@ deletebatch(id:any){
 
 // to add course
 addcourse(data:any){
-  return this.http.post(`${this.apiUrl}/add_course`, data)
+  return this.http.post(`${this.apiUrl}/adminapi/add_course`, data)
 
 }
 
 //to fetch all course data list
 getcourseList(){
-  return this.http.get(`${this.apiUrl}/courselist`)
+  return this.http.get(`${this.apiUrl}/adminapi/courselist`)
 }
 
 
 // to delete course
 deletecourse(id:any){
-  return this.http.delete(`${this.apiUrl}/deletecourse/${id}`)
+  return this.http.delete(`${this.apiUrl}/adminapi/deletecourse/${id}`)
 }
 
 
@@ -118,19 +97,19 @@ deletecourse(id:any){
 
 // to add program
 addprogram(data:any){
-  return this.http.post(`${this.apiUrl}/add_program`, data)
+  return this.http.post(`${this.apiUrl}/adminapi/add_program`, data)
 
 }
 
 //to fetch all program data list
 getprogramList(){
-  return this.http.get(`${this.apiUrl}/programlist`)
+  return this.http.get(`${this.apiUrl}/adminapi/programlist`)
 }
 
 
 // to delete program
 deleteprogram(id:any){
-  return this.http.delete(`${this.apiUrl}/deleteprogram/${id}`)
+  return this.http.delete(`${this.apiUrl}/adminapi/deleteprogram/${id}`)
 }
 
 

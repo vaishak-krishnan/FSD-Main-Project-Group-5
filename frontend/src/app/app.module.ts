@@ -19,6 +19,9 @@ import { LoginComponent } from './components/login/login.component';
 import { CourseslistComponent } from './components/courseslist/courseslist.component';
 import { ProgramlistComponent } from './components/programlist/programlist.component';
 import { BatclistComponent } from './components/batclist/batclist.component';
+import { TrainerlistComponent } from './components/trainerlist/trainerlist.component';
+import { PlacementofficerlistComponent } from './components/placementofficerlist/placementofficerlist.component';
+import { UseraddComponent } from './components/useradd/useradd.component';
 
 
 
@@ -33,7 +36,10 @@ import { BatclistComponent } from './components/batclist/batclist.component';
     LoginComponent,
     CourseslistComponent,
     ProgramlistComponent,
-    BatclistComponent
+    BatclistComponent,
+    TrainerlistComponent,
+    PlacementofficerlistComponent,
+    UseraddComponent
 
   ],
   imports: [

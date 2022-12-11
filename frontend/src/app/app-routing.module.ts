@@ -1,3 +1,6 @@
+import { UseraddComponent } from './components/useradd/useradd.component';
+import { PlacementofficerlistComponent } from './components/placementofficerlist/placementofficerlist.component';
+import { TrainerlistComponent } from './components/trainerlist/trainerlist.component';
 import { ProgramlistComponent } from './components/programlist/programlist.component';
 import { BatclistComponent } from './components/batclist/batclist.component';
 import { CourseslistComponent } from './components/courseslist/courseslist.component';
@@ -17,6 +20,11 @@ const routes: Routes = [
   {path:'add-students',component:AddstudentsComponent},
   {path:'edit-students',component:EditstudentsComponent},
 
+  {path:'add-user',component:UseraddComponent},
+  {path:'trainerlist',component:TrainerlistComponent},
+  {path:'placementofficerlist',component:PlacementofficerlistComponent},
+
+  
   // path for admin settings
   {path:'batch-list',component:BatclistComponent},
   {path:'course-list',component:CourseslistComponent},

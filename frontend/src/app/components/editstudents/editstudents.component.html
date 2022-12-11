@@ -1,5 +1,9 @@
 
-  
+   <div class="sidebar ">
+    <a  routerLink="/studentslist">Home</a>
+    <a routerLink="/trainerlist" >Trainers</a>
+    <a routerLink="/placementofficerlist">Placement Officers</a>
+  </div>
   <div class="content container pt-5 pb-5">
     <div class=" pt-5">
         
@@ -94,6 +98,7 @@
     <div class="add pt-5" style="text-align:center">
         <button type="submit"  class="btn btn-success"  [disabled]="updatestudentform.invalid">Update Student</button>
         <button type="reset" class="btn btn-warning m-2 ">Clear</button>
+        <button type="button" class="btn btn-warning m-2 " routerLink="/studentslist">Back</button>
     </div>
 
 </form>
