@@ -23,7 +23,7 @@
             </div>
             <div class="form-group pt-3">
 
-                <select class="form-select" aria-label="Default select example" name="course"  formControlName="course"  >
+                <select class="form-select" aria-label="Default select example" name="course"  formControlName="course" >
                     <option value="" selected disabled>Please select course</option>
                     <option   *ngFor="let course of courses  let i= index" [value]="course.course_name">{{course.course_name}}</option>
                 </select>
@@ -90,6 +90,7 @@
     <div class="add pt-5" style="text-align:center">
         <button type="submit" [disabled]="addstudentform.invalid"  class="btn btn-success">Add Student</button>
         <button type="reset" class="btn btn-warning m-2 ">Clear</button>
+        <button type="button" class="btn btn-warning m-2 " routerLink="/studentslist">Back</button>
     </div>
 
 </form>
