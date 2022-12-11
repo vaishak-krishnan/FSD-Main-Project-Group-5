@@ -93,17 +93,17 @@ router.put('/updateStudent', async (req, res) => {
     try {
         let id = req.body._id;
         let item = { //remove 'data' from below if we not pass data object from frontend
-            student_name: req.body.student_name,
-            contact_number: req.body.contact_number,
-            email_id: req.body.email_id,
-            contact_address: req.body.contact_address,
-            course: req.body.course,
-            batch: req.body.batch,
-            program: req.body.program,
-            training_head: req.body.training_head,
-            placement_officer: req.body.placement_officer,
-            employment_status: req.body.employment_status,
-            course_status: req.body.course_status
+            student_name: req.body.data.student_name,
+            contact_number: req.body.data.contact_number,
+            email_id: req.body.data.email_id,
+            contact_address: req.body.data.contact_address,
+            course: req.body.data.course,
+            batch: req.body.data.batch,
+            program: req.body.data.program,
+            training_head: req.body.data.training_head,
+            placement_officer: req.body.data.placement_officer,
+            employment_status: req.body.data.employment_status,
+            course_status: req.body.data.course_status
         }
         console.log("incoming data from update", item);
 

@@ -25,13 +25,14 @@ export class StudentslistComponent implements OnInit {
   
   getstudentData() {
     this.apiService.getstudentsList().subscribe(res => {
-      this.students = res
+      this.students = res;
     })
   }
 
   updatestudent(_id: any) {
     console.log(_id)
     this.apiService.formupdate = _id;
+    console.log(_id)
     this.router.navigate(['/edit-students']);
   }
 

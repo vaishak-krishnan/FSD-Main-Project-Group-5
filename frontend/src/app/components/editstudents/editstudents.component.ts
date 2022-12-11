@@ -1,4 +1,3 @@
-import { StudentslistComponent } from './../studentslist/studentslist.component';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
@@ -12,15 +11,16 @@ import { Router } from '@angular/router';
 })
 export class EditstudentsComponent implements OnInit {
 
-  constructor(public api: ApiService, private router: Router) { }
+  constructor(public apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.getdata()
 
   }
 
-  _id = this.api.formupdate;
+  _id = this.apiService.formupdate;
   studentsdata: any ={
+
     student_name:'',
     contact_number:'',
     email_id:'',
@@ -32,11 +32,12 @@ export class EditstudentsComponent implements OnInit {
     placement_officer:'',
     employment_status:'',
     course_status:''
+
     }
 
     getdata() {
 
-      this.api.getStudentById(this._id).subscribe(res => {
+      this.apiService.getStudentById(this._id).subscribe(res => {
         this.studentsdata = res;
         console.log("incoming data from update, get id", this._id);
         this.setoldvalue()
@@ -45,16 +46,16 @@ export class EditstudentsComponent implements OnInit {
 
     updatestudentform: any = new FormGroup({
       student_name: new FormControl("", [Validators.required, Validators.minLength(5)]),
-      contact_number: new FormControl("", [Validators.required, Validators.minLength(5)]),
+      contact_number: new FormControl("", [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
       email_id: new FormControl("", [Validators.required, Validators.minLength(5)]),
       contact_address: new FormControl("", [Validators.required, Validators.minLength(5)]),
-      course: new FormControl("", [Validators.required, Validators.minLength(5)]),
-      batch: new FormControl("", [Validators.required, Validators.minLength(5)]),
-      program: new FormControl("", [Validators.required, Validators.minLength(5)]),
-      training_head: new FormControl("", [Validators.required, Validators.minLength(5)]),
-      placement_officer: new FormControl("", [Validators.required, Validators.minLength(5)]),
-      employment_status: new FormControl("", [Validators.required, Validators.minLength(5)]),
-      course_status: new FormControl("", [Validators.required, Validators.minLength(5)]),
+      course: new FormControl("", [Validators.required]),
+      batch: new FormControl("", [Validators.required]),
+      program: new FormControl("", [Validators.required]),
+      training_head: new FormControl("", [Validators.required]),
+      placement_officer: new FormControl("", [Validators.required]),
+      employment_status: new FormControl("", [Validators.required]),
+      course_status: new FormControl("", [Validators.required]),
     })
 
     setoldvalue() {
@@ -77,9 +78,11 @@ export class EditstudentsComponent implements OnInit {
 
   updateStudent(){
 
-    this.api.updateStudent(this.updatestudentform.value,this._id).subscribe((res) => {
+    this.apiService.updateStudent(this.updatestudentform.value,this._id).subscribe((res) => {
+
+      console.log(this.updatestudentform.value,this._id)
       // this.blogerDatas = res;
-      // console.log("incoming data from update form ",this.updatebookform.value);
+      console.log("incoming data from update form ",this.updatestudentform.value,this._id );
     this.router.navigate(['/studentslist']);
     });
   }

@@ -4,27 +4,27 @@
     <div class=" pt-5">
         
         <h3>Update Student Details</h3>
-<form  (ngSubmit)="updateStudent()" [formGroup]="updatestudentform">
+<form  [formGroup]="updatestudentform"  (ngSubmit)="updateStudent()">
 
 
     <div class="row">
         <div class="col-6">
             <div class="form-group pt-3">
-                <input type="text" class="form-control"  name="student_name" required placeholder="Name" >
+                <input type="text" class="form-control"   required placeholder="Name" formControlName="student_name" >
         
             </div>
             <div class="form-group pt-3">
-                <input type="" class="form-control"  name="contact_number"  required placeholder="Contact Number"  >
+                <input type="" class="form-control"   required placeholder="Contact Number" formControlName="contact_number" >
         
             </div>
             <div class="form-group pt-3">
-                <input type="text" class="form-control" name="email_id"   required placeholder="email id"  >
+                <input type="text" class="form-control"    required placeholder="email id" formControlName="email_id" >
         
             </div>
             <div class="form-group pt-3">
 
-                <select class="form-select" aria-label="Default select example" name="course" >
-                    <option selected>Select Course</option>
+                <select class="form-select" aria-label="Default select example"  formControlName="course">
+                    <option value="" selected disabled>Please select course</option>
                     <option value="DSA">DSA</option>
                     <option value="ML-AI">ML-AI</option>
                     <option value="RPA">RPA</option>
@@ -36,8 +36,8 @@
                  
             </div>
             <div class="form-group pt-3">
-                <select class="form-select" aria-label="Default select example" name="batch" >
-                    <option selected>Select Batch</option>
+                <select class="form-select" aria-label="Default select example"  formControlName="batch">
+                    <option value="" selected disabled>Please select course</option>
                     <option value="May 22">May 22</option>
                     <option value="June 22">June 22</option>
                     <option value="July 22">July 22</option>
@@ -45,8 +45,8 @@
                   </select>
             </div>
             <div class="form-group pt-3">
-                <select class="form-select" aria-label="Default select example" name="program" >
-                    <option selected>Select Program</option>
+                <select class="form-select" aria-label="Default select example"  formControlName="program">
+                    <option value="" selected disabled>Please select course</option>
                     <option value="ICTAK">ICTAK</option>
                     <option value="KKEM">KKEM</option>
                     <option value="NORKA">NORKA</option>
@@ -56,22 +56,24 @@
                
             </div>
             <div class="form-group pt-3">
-                <select class="form-select" aria-label="Default select example" name="training_head" >
+                <select class="form-select" aria-label="Default select example"  formControlName="training_head">
+                    <option value="" selected disabled>Please select course</option>
                     <option selected>Select Training Head</option>
                     <option value="Training Head 1">Training Head 1</option>
                   </select>
             </div>
             <div class="form-group pt-3">
-                <select class="form-select" aria-label="Default select example" name="placement_officer" >
+                <select class="form-select" aria-label="Default select example" formControlName="placement_officer" >
+                    <option value="" selected disabled>Please select course</option>
                     <option selected>Select Placement head</option>
                     <option value="Placement Head 1">Placement Head 1</option>
                   </select>
                 
             </div>
             <div class="form-group pt-3">
-                <select class="form-select" aria-label="Default select example" name="employment_status" >
-                    <option selected>Select Placement Status </option>
-                    <option value="PlacedJobSeeking">PlacedJobSeeking</option>
+                <select class="form-select" aria-label="Default select example"  formControlName="employment_status">
+                    <option value="" selected disabled>Please select course</option>
+                    <option value="PlacedJobSeeking">Placed</option>
                     <option value="JobSeeking">JobSeeking</option>
                     <option value="NOT Interested">NOT Interested</option>
                   </select>
@@ -79,8 +81,8 @@
             </div>
             <div class="form-group pt-3">
 
-                <select class="form-select" aria-label="Default select example" name="course_status" >
-                    <option selected>Select Course Completion Status </option>
+                <select class="form-select" aria-label="Default select example"  formControlName="course_status">
+                    <option value="" selected disabled>Please select course</option>
                     <option value="Qualified">Qualified</option>
                     <option value="Incompetent">Incompetent</option>
                   </select>
@@ -91,7 +93,7 @@
 
            
             <div class="form-group">
-                <textarea name="contact_address" class="form-control" id="" cols="30" rows="22" required placeholder="Address" ></textarea>
+                <textarea  class="form-control" id="" cols="30" rows="22" required placeholder="Address" formControlName="contact_address"></textarea>
             </div>
 
         </div>
@@ -99,7 +101,7 @@
 
 
     <div class="add pt-5" style="text-align:center">
-        <button type="submit"  class="btn btn-success">Update Student</button>
+        <button type="submit"  class="btn btn-success"  [disabled]="updatestudentform.invalid">Update Student</button>
         <button type="reset" class="btn btn-warning m-2 ">Clear</button>
     </div>
 

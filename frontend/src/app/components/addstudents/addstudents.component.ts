@@ -22,21 +22,7 @@ export class AddstudentsComponent implements OnInit {
     private router:Router,
     private route:ActivatedRoute
     ) { }
-    // studentsdata={
-    //   student_name:'',
-    //   contact_number:'',
-    //   email_id:'',
-    //   contact_address:'',
-    //   course:'',
-    //   batch:'',
-    //   program:'',
-    //   training_head:'',
-    //   placement_officer:'',
-    //   employment_status:'',
-    //   course_status:''
-    //   }
-  
-
+    
   ngOnInit(): void {
     
     this.getcourseData();
@@ -90,14 +76,7 @@ export class AddstudentsComponent implements OnInit {
   }
 
 
-  // onSubmit(){
-  //   this.apiService.addstudent(this.studentsdata).subscribe(res=>{
-  //     this.students=res
-  //     alert('successfully added');
-  //     this.router.navigate(['/studentslist'])
-  //   })
-  // }  
-
+ 
 
   addstudent() {
     this.apiService.addstudent(this.addstudentform.value).subscribe(res => {
