@@ -11,10 +11,12 @@
         <div class="pt-5 pb-5">
           <button class="btn btn-primary" routerLink="/add-students">Add Students</button>
         </div>
+        <div class="search-box pb-3">
+          <input type="text" class="form-control " placeholder="Search" name="search" [(ngModel)]="searchText" >
+        </div>
         <table class="table table-hover ">
             <thead>
               <tr class="table-dark">
-                <th scope="col">#</th>
                 <th scope="col">Student Name</th>
                 <th scope="col">email id</th>
                 <th scope="col">Phone</th>
@@ -28,8 +30,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let student of students  let i= index">
-                <th scope="row">{{i+1}}</th>
+              <tr *ngFor="let student of students | filter:searchText  "  >
+                <!-- <th scope="row"  let i= index  >{{i+1}}</th> -->
                 <td>{{student.student_name}}</td>
                 <td>{{student.contact_number}}</td>
                 <td>{{student.phone}}</td>

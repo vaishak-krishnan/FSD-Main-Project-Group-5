@@ -21,6 +21,7 @@ import { ProgramlistComponent } from './components/programlist/programlist.compo
 import { BatclistComponent } from './components/batclist/batclist.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

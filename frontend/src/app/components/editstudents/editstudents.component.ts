@@ -11,10 +11,18 @@ import { Router } from '@angular/router';
 })
 export class EditstudentsComponent implements OnInit {
 
+  students  : any = []
+  courses   : any = []
+  batches   : any = []
+  programs  : any = []
+
   constructor(public apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.getdata()
+    this.getcourseData();
+    this.getbatchData();
+    this.getprogramData();
 
   }
 
@@ -75,6 +83,8 @@ export class EditstudentsComponent implements OnInit {
       })
     }
 
+    
+
 
   updateStudent(){
 
@@ -85,6 +95,36 @@ export class EditstudentsComponent implements OnInit {
       console.log("incoming data from update form ",this.updatestudentform.value,this._id );
     this.router.navigate(['/studentslist']);
     });
+  }
+
+
+  // function for get course data to selctbox
+
+  getcourseData() {
+    this.apiService.getcourseList().subscribe(res => {
+      this.courses = res
+  
+      console.log(this.courses)
+    })
+  }
+
+
+  // function for get batch data to selectbox
+  getbatchData() {
+    this.apiService.getbatchList().subscribe(res => {
+      this.batches = res
+
+      console.log(this.batches)
+    })
+  }
+
+    // function for get batch data to selectbox
+  getprogramData() {
+    this.apiService.getprogramList().subscribe(res => {
+      this.programs = res
+
+      console.log(this.programs)
+    })
   }
 
 }
